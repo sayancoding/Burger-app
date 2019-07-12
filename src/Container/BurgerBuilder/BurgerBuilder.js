@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Burger from '../../Components/Burger/Burger';
 import BurgerControls from '../../Components/Burger/BuildControls/BuildControls'
 
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/aux';
 
 const ingredient_price={
     salad:11,
