@@ -1,3 +1,7 @@
+## add nodes_pakages
+From project main directory open cmd and type `run npm` to add dependencies.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
