@@ -7,7 +7,7 @@
     align-items: center;
     background-color: rgb(247, 113, 60);
     padding: 5px 0; 
-    box-shadow: 0 2px 4px rgb(117, 115, 115);
+    box-shadow: 0 2px 7px rgb(192, 192, 192);
 }
 
 .OrderButton{
@@ -20,17 +20,20 @@
     margin-bottom: 8px;
     cursor: pointer;
     font-weight: bolder;
+    border-radius: 3px;
+    box-shadow: 0 1px 6px rgb(158, 77, 77);
 }
 .OrderButton:active{
-    background-color: rgb(170, 55, 20);
+    background-color: rgb(165, 49, 14);
 
 }
-.OrderButton:disabled{
-    background-color: rgb(235, 103, 63);
-    cursor: not-allowed ;
-    
-    animation: disabel 0.2s ease-in;
 
+.OrderButton:disabled{
+    background-color: rgba(235, 103, 63, 0.959);
+    cursor: not-allowed ;
+    color: rgba(235, 235, 235, 0.555);
+    animation: disabel 0.2s ease-in;
+    box-shadow: 0 1px 9px rgba(104, 45, 45, 0.705);
 }
 
 @keyframes disabel{
@@ -48,6 +51,7 @@
 .OrderButton:not(:disabled){
     animation: enable 0.4s linear;
     padding: 10px 5.7rem;
+    box-shadow: 0 1px 6px rgb(102, 59, 59);
 }
 
 
