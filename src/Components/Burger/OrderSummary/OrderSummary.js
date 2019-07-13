@@ -20,7 +20,7 @@ const OrderSummary = (props) =>{
             <h4><span>₹</span> : {props.totalprice}</h4>
             <p>Continue to check-out?</p>
             <Button btnType={'Success'}>Continue</Button>
-            <Button btnType={'Danger'}>Cancel</Button>
+            <Button btnType={'Danger'} clicked={props.cancel}>Cancel</Button>
         </Aux>
 
     );
