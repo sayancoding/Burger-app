@@ -1,5 +1,6 @@
 import React from 'react';
 import Aux from '../../../hoc/wrapped';
+import Button from '../../UI/Button/Button'
 
 const OrderSummary = (props) =>{
     const ingredients  = Object.keys(props.ingredients)
@@ -18,6 +19,8 @@ const OrderSummary = (props) =>{
             </ul>
             <h4><span>₹</span> : {props.totalprice}</h4>
             <p>Continue to check-out?</p>
+            <Button btnType={'Success'}>Continue</Button>
+            <Button btnType={'Danger'}>Cancel</Button>
         </Aux>
 
     );
