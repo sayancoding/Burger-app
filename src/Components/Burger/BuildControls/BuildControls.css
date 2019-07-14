@@ -21,7 +21,7 @@
     cursor: pointer;
     font-weight: bolder;
     border-radius: 3px;
-    box-shadow: 0 1px 6px rgb(158, 77, 77);
+    box-shadow: 0 1px 6px rgb(65, 65, 65);
 
 }
 .OrderButton:active{
@@ -34,7 +34,7 @@
     cursor: not-allowed ;
     color: rgba(235, 235, 235, 0.555);
     animation: disabel 0.2s ease-in;
-    box-shadow: 0 1px 9px rgba(104, 45, 45, 0.705);
+    box-shadow: 0 1px 5px rgba(82, 82, 82, 0.705);
 }
 
 @keyframes disabel{
