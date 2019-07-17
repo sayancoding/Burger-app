@@ -1,9 +1,15 @@
 .Logo{
-    height: 80%;
+    height: 11%;
     /* background-color: #FFF; */
-    padding: 2px;
+    padding: 1px;
 
 }
-img{
+.Logo img{
     height: 100%;
+}
+
+@media (min-width:500px){
+    .Logo{
+        height: 80%;
+    }
 }
