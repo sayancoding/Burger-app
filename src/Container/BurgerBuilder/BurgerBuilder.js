@@ -3,7 +3,7 @@ import Burger from '../../Components/Burger/Burger';
 import BurgerControls from '../../Components/Burger/BuildControls/BuildControls'
 import Modal from '../../Components/UI/Modal/Modal'
 import OrderSummary from '../../Components/Burger/OrderSummary/OrderSummary'
-// import axios from '../../axios-server'
+import axios from '../../axios-server'
 
 import Aux from '../../hoc/wrapped';
 
@@ -81,21 +81,23 @@ class BurgerBuilder extends Component{
     }
 
     purchaseContinue =()=>{
-        // const data = {
-        //     ingredients : this.state.ingredients,
-        //     totalPrice : this.state.totalPrice,
-        //     customer : {
-        //         name : "sayan maity",
-        //         address:{
-        //             dist:'west bengal',
-        //             zip:'721212',
-        //             country : "india",
-        //         }
-        //     }
-        // }
-        // axios.post('/order.json',data)
-        //     .then(res=>{console.log(res);})
-        //     .catch(err=>{console.log(err);})
+        const data = {
+            ingredients : this.state.ingredients,
+            totalPrice : this.state.totalPrice,
+            customer : {
+                name : "sayan maity",
+                address:{
+                    dist:'west bengal',
+                    zip:'721212',
+                    country : "india",
+                },
+                email:"sayanmaity007@gmail.com"
+            },
+            deliveryMethod:"fast"
+        }
+        axios.post('/order.json',data)
+            .then(res=>{console.log(res);})
+            .catch(err=>{console.log(err);})
         // alert('You in continue but site under developing.. 😐')
     }
 
