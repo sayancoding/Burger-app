@@ -1,7 +1,7 @@
-// // import React from './node_modules/react';
+// import React from 'react';
 
-// const Aux = (props) =>{ 
-// return  props.children
-// };
+const Aux = (props) =>{ 
+    return  props.children
+};
 
-// export default Aux;
+export default Aux;
