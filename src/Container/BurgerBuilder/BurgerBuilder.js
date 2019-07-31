@@ -4,6 +4,7 @@ import BurgerControls from '../../Components/Burger/BuildControls/BuildControls'
 import Modal from '../../Components/UI/Modal/Modal'
 import OrderSummary from '../../Components/Burger/OrderSummary/OrderSummary'
 import axios from '../../axios-server'
+import Spinner from '../../Components/UI/Spinner/Spinner'
 
 import Aux from '../../hoc/wrapped';
 
@@ -26,6 +27,8 @@ class BurgerBuilder extends Component{
         totalPrice : 15,
         purchasable:false,
         purchasing:false,
+
+        loading : false,
     }
 
     purchasableHandeler=(price)=>{
@@ -110,16 +113,23 @@ class BurgerBuilder extends Component{
         for (let key in disableInfo) {
             disableInfo[key] = disableInfo[key] <= 0;
         }
+        
+        let Display = <OrderSummary 
+        ingredients={this.state.ingredients} 
+        cancel={this.purchaseCancelHandeler} 
+        continue={this.purchaseContinue}
+        totalprice={this.state.totalPrice}
+        />
+
+        if(this.state.loading){
+            Display = <Spinner/>
+        }
+        
 
         return(
             <Aux>
                 <Modal show = {this.state.purchasing} click={this.purchaseCancelHandeler}>
-                    <OrderSummary 
-                    ingredients={this.state.ingredients} 
-                    cancel={this.purchaseCancelHandeler} 
-                    continue={this.purchaseContinue}
-                    totalprice={this.state.totalPrice}
-                    />
+                    {Display}
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>
                 <BurgerControls 
