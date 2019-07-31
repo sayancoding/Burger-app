@@ -84,6 +84,7 @@ class BurgerBuilder extends Component{
     }
 
     purchaseContinue =()=>{
+        this.setState({loading:true})
         const data = {
             ingredients : this.state.ingredients,
             totalPrice : this.state.totalPrice,
@@ -99,8 +100,8 @@ class BurgerBuilder extends Component{
             deliveryMethod:"fast"
         }
         axios.post('/order.json',data)
-            .then(res=>{console.log(res);})
-            .catch(err=>{console.log(err);})
+            .then(res=>{this.setState({loading:false})})
+            .catch(err=>{this.setState({loading:false})})
         // alert('You in continue but site under developing.. 😐')
     }
 
