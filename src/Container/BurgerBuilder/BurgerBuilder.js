@@ -3,7 +3,7 @@ import Burger from '../../Components/Burger/Burger';
 import BurgerControls from '../../Components/Burger/BuildControls/BuildControls'
 import Modal from '../../Components/UI/Modal/Modal'
 import OrderSummary from '../../Components/Burger/OrderSummary/OrderSummary'
-import axios from '../../axios-server'
+// import axios from '../../axios-server'
 import Spinner from '../../Components/UI/Spinner/Spinner'
 
 import Aux from '../../hoc/wrapped';
@@ -84,29 +84,33 @@ class BurgerBuilder extends Component{
     }
 
     purchaseContinue =()=>{
-        this.setState({loading:true})
-        const data = {
-            ingredients : this.state.ingredients,
-            totalPrice : this.state.totalPrice,
-            customer : {
-                name : "sayan maity",
-                address:{
-                    dist:'west bengal',
-                    zip:'721212',
-                    country : "india",
-                },
-                email:"sayanmaity007@gmail.com"
-            },
-            deliveryMethod:"fast"
-        }
-        axios.post('/order.json',data)
-            .then(res=>{this.setState({loading:false})})
-            .catch(err=>{this.setState({loading:false})})
+        // this.setState({loading:true})
+        // const data = {
+        //     ingredients : this.state.ingredients,
+        //     totalPrice : this.state.totalPrice,
+        //     customer : {
+        //         name : "sayan maity",
+        //         address:{
+        //             dist:'west bengal',
+        //             zip:'721212',
+        //             country : "india",
+        //         },
+        //         email:"sayanmaity007@gmail.com"
+        //     },
+        //     deliveryMethod:"fast"
+        // }
+        // axios.post('/order.json',data)
+        //     .then(res=>{this.setState({loading:false,purchasing:false})})
+        //     .catch(err=>{this.setState({loading:false,purchasing:false})})
         // alert('You in continue but site under developing.. 😐')
+        this.props.history.push( this.props.match.url+'checkout');
     }
 
     purchaseCancelHandeler=()=>{
         this.setState({purchasing:false})
+    }
+    componentDidMount() {
+        console.log(this.props);
     }
     
     render(){

@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './NavigationItems.css'
+// import {Link } from 'react-router-dom'
 import NavigationItem from './NavigationItem/NavigationItem'
 
 const NavigationItems = (props) =>{
@@ -8,9 +9,13 @@ const NavigationItems = (props) =>{
             <NavigationItem
             link="./" active={true} 
             >Burger Builder</NavigationItem>
-            <NavigationItem
-            link="./" active={false}
-            >Check Out</NavigationItem>
+            {/* <Link to="/cheackout"> */}
+                <NavigationItem
+                    link="./checkout" active={false}
+                >Check Out</NavigationItem>
+            {/* </Link> */}
+            
+            
             
         </ul>
     );

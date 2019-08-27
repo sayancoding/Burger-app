@@ -19,7 +19,7 @@ span{
   margin: 1px;
   border-radius: 50%;
   border: 5px solid rgb(22, 22, 22);
-  border-color: rgb(95, 26, 26) transparent rgb(156, 24, 24) transparent;
+  border-color: rgb(122, 37, 37) transparent rgb(150, 9, 9) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
