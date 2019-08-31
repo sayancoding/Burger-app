@@ -103,7 +103,16 @@ class BurgerBuilder extends Component{
         //     .then(res=>{this.setState({loading:false,purchasing:false})})
         //     .catch(err=>{this.setState({loading:false,purchasing:false})})
         // alert('You in continue but site under developing.. 😐')
-        this.props.history.push( this.props.match.url+'checkout');
+        // this.props.history.push( this.props.match.url+'checkout');
+        const queryParams = [];
+        for (let i in this.state.ingredients){
+            queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.state.ingredients[i]))
+        }
+        const queryString = queryParams.join("&")
+        this.props.history.push({
+            pathname: '/checkout',
+            search:'&'+queryString
+        });
     }
 
     purchaseCancelHandeler=()=>{
